@@ -1,8 +1,8 @@
 Feature: General
 
-  Scenario Outline: POST, PUT and PATCH requests should have non-empty payloads
+  Scenario Outline: POST and PATCH requests should have non-empty payloads
 
-    All POST, PUT and PATCH requests must have non-zero values for its "Content-Length" header
+    All POST and PATCH requests must have non-zero values for its "Content-Length" header
 
     When the client creates a <method> request to /
     And attaches a generic empty payload
@@ -16,7 +16,6 @@ Feature: General
     Examples:
       | method |
       | POST   |
-      | PUT    |
       | PATCH  |
 
   Scenario Outline: Content-Type Header should be set for requests with non-empty payloads
@@ -36,7 +35,6 @@ Feature: General
     Examples:
       | method |
       | POST   |
-      | PUT    |
       | PATCH  |
 
   Scenario Outline: Content-Type Header should be set to application/json
@@ -55,5 +53,4 @@ Feature: General
     Examples:
       | method |
       | POST   |
-      | PUT    |
       | PATCH  |
