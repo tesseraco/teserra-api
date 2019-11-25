@@ -9,8 +9,8 @@ Feature: General
     And sends the request
     Then our API should respond with a 400 HTTP status code
     And the content type of the response should be JSON
-    And the payload of the response should be a JSON object
-    And contains an error property set to true
+    And the body of the response should be a JSON object
+    And contains an success property set to false
     And contains a message property which says "Payload should not be empty"
 
     Examples:
@@ -29,8 +29,8 @@ Feature: General
     And sends the request
     Then our API should respond with a 400 HTTP status code
     And the content type of the response should be JSON
-    And the payload of the response should be a JSON object
-    And contains an error property set to true
+    And the body of the response should be a JSON object
+    And contains an success property set to false
     And contains a message property which says 'The "Content-Type" header must be set for requests with a non-empty payload'
 
     Examples:
@@ -48,8 +48,8 @@ Feature: General
     And sends the request
     Then our API should respond with a 415 HTTP status code
     And the content type of the response should be JSON
-    And the payload of the response should be a JSON object
-    And contains an error property set to true
+    And the body of the response should be a JSON object
+    And contains an success property set to false
     And contains a message property which says 'The "Content-Type" header must always be "application/json"'
 
     Examples:
